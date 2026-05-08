@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with React",
+    "excerpt": "Learn the basics of React and how to build your first component.",
+    "content": "React is a popular JavaScript library for building user interfaces...",
+    "date": "2023-10-01",
+    "category": "Tutorial"
+  },
+  {
+    "id": 2,
+    "title": "Advanced State Management",
+    "excerpt": "Explore different ways to manage state in React applications.",
+    "content": "State management is crucial in React apps...",
+    "date": "2023-10-05",
+    "category": "Tutorial"
+  },
+  {
+    "id": 3,
+    "title": "CSS in React",
+    "excerpt": "Styling components in React using CSS modules and styled-components.",
+    "content": "Styling in React can be done in various ways...",
+    "date": "2023-10-10",
+    "category": "Styling"
+  },
+  {
+    "id": 4,
+    "title": "React Hooks Overview",
+    "excerpt": "An introduction to React Hooks and their usage.",
+    "content": "Hooks are a new addition in React...",
+    "date": "2023-10-15",
+    "category": "Tutorial"
+  },
+  {
+    "id": 5,
+    "title": "Building a Blog with React",
+    "excerpt": "Step-by-step guide to creating a blog application.",
+    "content": "Blogs are great for sharing knowledge...",
+    "date": "2023-10-20",
+    "category": "Project"
+  }
+]
