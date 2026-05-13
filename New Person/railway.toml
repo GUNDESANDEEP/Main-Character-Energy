@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd New\\ Person/backend && npm install"
+
+[deploy]
+startCommand = "cd New\\ Person/backend && npm start"
+
+[[services]]
+name = "main-character-energy-backend"
+rootDirectory = "New Person/backend"
