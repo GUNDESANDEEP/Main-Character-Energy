@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+# Railway start command for backend
+cd "New Person/backend" && npm install && npm start

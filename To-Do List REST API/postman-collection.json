@@ -1,0 +1,115 @@
+{
+  "info": {
+    "name": "To-Do List REST API",
+    "description": "Collection for testing To-Do List CRUD operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5005/api/tasks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5005",
+          "path": ["api", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5005/api/tasks/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5005",
+          "path": ["api", "tasks", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "PASTE_TASK_ID_HERE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Buy groceries\",\n  \"description\": \"Milk, eggs, bread\",\n  \"priority\": \"high\",\n  \"dueDate\": \"2026-05-20\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5005/api/tasks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5005",
+          "path": ["api", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Buy groceries\",\n  \"completed\": true,\n  \"priority\": \"medium\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5005/api/tasks/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5005",
+          "path": ["api", "tasks", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "PASTE_TASK_ID_HERE"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5005/api/tasks/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5005",
+          "path": ["api", "tasks", ":id"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "PASTE_TASK_ID_HERE"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

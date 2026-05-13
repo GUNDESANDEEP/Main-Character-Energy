@@ -7,17 +7,21 @@ const axios = require('axios');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:4200', process.env.FRONTEND_URL || '*'],
+  credentials: true
+}));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/newperson', {
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/newperson';
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.log(err));
+.then(() => console.log('✅ MongoDB connected'))
+.catch(err => console.log('❌ MongoDB connection error:', err));
 
 // Routes
 const personRoutes = require('./routes/person');

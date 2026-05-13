@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,9 @@ export class AppComponent implements OnInit {
   imagePreview: string | null = null;
   selectedFile: File | null = null;
   submitted = false;
+
+  // API Configuration
+  private apiBaseUrl = environment.apiUrl;
 
   // AI Generation Properties
   aiPrompt: string = '';
@@ -45,7 +49,7 @@ export class AppComponent implements OnInit {
     this.aiError = null;
 
     // Call backend endpoint for AI generation
-    this.http.post('http://localhost:5000/api/generate-avatar', {
+    this.http.post(`${this.apiBaseUrl}/generate-avatar`, {
       prompt: this.aiPrompt
     }).subscribe({
       next: (response: any) => {
@@ -94,7 +98,7 @@ export class AppComponent implements OnInit {
       formData.append('prompt', this.personaForm.value.prompt);
       formData.append('avatar', this.selectedFile);
 
-      this.http.post('http://localhost:5000/api/person', formData).subscribe({
+      this.http.post(`${this.apiBaseUrl}/person`, formData).subscribe({
         next: (response) => {
           console.log('Entry submitted successfully!', response);
           alert('✨ Your persona has been submitted!');
