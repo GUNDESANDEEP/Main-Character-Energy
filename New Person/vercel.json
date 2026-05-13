@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "cd New\\ Person/frontend && npm install && npm run build",
-  "outputDirectory": "New Person/frontend/dist/main-character-energy-app",
+  "outputDirectory": "New Person/frontend/dist/main-character-energy",
   "trailingSlash": false,
   "rewrites": [
     {
